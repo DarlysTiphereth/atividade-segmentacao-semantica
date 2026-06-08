@@ -1,1 +1,45 @@
+# Atividade - Segmentação Semântica
 
+Este repositório apresenta a implementação da atividade de Segmentação Semântica, incluindo treinamento, avaliação, conversão para TensorFlow Lite e preparação para implantação em Android.
+
+## Objetivo
+
+Treinar um modelo de segmentação semântica, avaliar seu desempenho com métricas e converter o modelo para TensorFlow Lite em FP32, permitindo sua integração em um aplicativo Android.
+
+## Ambiente
+
+O desenvolvimento foi realizado no Google Colab, utilizando Python, TensorFlow/Keras e TensorFlow Datasets.
+
+Como o desenvolvimento foi feito em Chromebook, o pipeline principal foi validado no Colab e o modelo foi exportado para TensorFlow Lite para integração Android.
+
+## Dataset
+
+Foi utilizado o dataset Oxford-IIIT Pet, contendo imagens de cães e gatos com máscaras de segmentação.
+
+As classes consideradas foram:
+
+- Fundo
+- Borda
+- Animal
+
+## Modelo
+
+Foi implementada uma arquitetura UNet simples para segmentação semântica.
+
+A entrada do modelo possui dimensão 128x128x3.
+
+A saída do modelo gera uma máscara de segmentação por pixel com 3 classes.
+
+## Métricas
+
+Foram calculadas:
+
+- Acurácia por pixel
+- Mean IoU
+
+## TensorFlow Lite
+
+O modelo foi convertido para TensorFlow Lite em FP32, gerando o arquivo:
+
+```text
+model.tflite
